@@ -94,6 +94,9 @@ header {
             width: 300px;
             font-size: 3rem;
 
+            @include breakpoint-max(xs) {
+                font-size: 2.7rem;
+            }
             @include breakpoint-only(sm) {
                 width: 100%;
                 text-align: center;
