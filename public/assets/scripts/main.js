@@ -5,9 +5,10 @@ var Main = (function () {
 	// object
 	return {
 		init: function () {
-
-			
-
+			var l = $("#navbar-toggler");
+			l.on("click", function(o) {
+				l.toggleClass("is-active")
+			});                                                 
 		},
 
 		//--------
