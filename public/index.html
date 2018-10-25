@@ -10,23 +10,44 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.ico">
     <!-- Bower Components-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab" type="text/css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.1.0/css/all.css" type="text/css">
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet"><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js" ></script>
 <![endif]-->
   </head>
-  <body>
-    <header>
-      <h1>Sunny Coast Handyman</h1>
-    </header>
+  <body><!-- ///// Logo Header ///// -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs col-sm-12 col-md-12 col-lg-8 col-xl-6 offset-xl-3 offset-lg-2 d-none d-md-block">
+            <div class="content content-center font-roboto-slab text-dark-brown p-5">
+              <div class="logo-text content-title text-center font-weight-bold m-0">Sunny Coast Handyman <span class="typed-text"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header><!-- ///// Navbar ///// -->
+    <nav class="navbar navbar-expand-md bg-dark-brown" id="navbar-main">
+      <div class="container d-flex font-roboto-slab"><a class="navbar-brand d-md-none" href="javascript:void(0);">Sunny Coast Handyman</a>
+        <button class="hamburger hamburger--spring" id="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto bg-dark-brown">
+            <li class="nav-item active"><a class="nav-link text-light text-uppercase h5" href="javascript:void(0);">home <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link text-light text-uppercase h5" href="javascript:void(0);">about</a></li>
+            <li class="nav-item"><a class="nav-link text-light text-uppercase h5" href="javascript:void(0);">reviews</a></li>
+            <li class="nav-item"><a class="nav-link text-light text-uppercase h5" href="javascript:void(0);">gallery</a></li>
+            <li class="nav-item"><a class="nav-link text-light text-uppercase h5" href="javascript:void(0);">make payment</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <h2>It works!</h2>
-    <footer>
-      <h5>Footer</h5>
-    </footer>
+    <footer class="m-0"></footer>
     <!-- Bower Components-->
     <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" type="text/javascript"></script>
     <script src="//unpkg.com/popper.js@1.12.6/dist/umd/popper.min.js" type="text/javascript"></script>

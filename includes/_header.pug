@@ -1,2 +1,33 @@
-header
-  h1 Sunny Coast Handyman
+<!-- ///// Logo Header ///// -->
+header.header
+    .container
+      .row
+        .col-xs.col-sm-12.col-md-12.col-lg-8.col-xl-6.offset-xl-3.offset-lg-2.d-none.d-md-block
+          .content.content-center.font-roboto-slab.text-dark-brown.p-5
+            .logo-text.content-title.text-center.font-weight-bold.m-0
+              | Sunny Coast Handyman 
+              span.typed-text
+
+
+<!-- ///// Navbar ///// -->
+nav#navbar-main.navbar.navbar-expand-md.bg-dark-brown
+  .container.d-flex.font-roboto-slab
+    a.navbar-brand.d-md-none(href='javascript:void(0);') Sunny Coast Handyman
+    button#navbar-toggler.hamburger.hamburger--spring(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+      span.hamburger-box
+        span.hamburger-inner
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mx-auto.bg-dark-brown
+        li.nav-item.active
+          a.nav-link.text-light.text-uppercase.h5(href='javascript:void(0);')
+            | home 
+            span.sr-only (current)
+        li.nav-item
+          a.nav-link.text-light.text-uppercase.h5(href='javascript:void(0);') about
+        li.nav-item
+          a.nav-link.text-light.text-uppercase.h5(href='javascript:void(0);') reviews
+        li.nav-item
+          a.nav-link.text-light.text-uppercase.h5(href='javascript:void(0);') gallery
+        li.nav-item
+          a.nav-link.text-light.text-uppercase.h5(href='javascript:void(0);') make payment
+
