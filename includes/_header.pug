@@ -1,2 +1,32 @@
-header
-  h1 Sunny Coast Handyman
+header.w-100
+  .container.d-flex.justify-content-start.align-items-center.h-100
+    // Desktop
+    ul.main-menus.flex-1.m-0.p-0
+      li.ml-0
+        a.active(href='') Home
+      li
+        a(href='') About
+      li
+        a(href='') Review
+      li
+        a(href='') Gallery
+      li
+        a(href='') Make payment
+    a.make-booking.hotdog.ff-oswald(href='') Make a booking / Request a quote
+    // Mobile
+    .mobile-content.d-none.justify-content-between.w-100
+      .mc-logo
+        img.logo.w-100(src="../assets/images/logo.png", alt="Sunny Coast Handyman")
+      .mc-menu.d-flex.align-items-center.justify-content-center
+        button.hamburger.hamburger--collapse.navbar-toggler.d-block.d-sm-none
+          span.hamburger-box
+            span.hamburger-inner
+      .mobile-menu.overlay
+          .overlay-content
+            a(href='#') Home
+            a(href='#') About
+            a(href='#') Review
+            a(href='#') Gallery
+            a(href='#') Payment
+
+

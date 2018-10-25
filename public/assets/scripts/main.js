@@ -5,9 +5,13 @@ var Main = (function () {
 	// object
 	return {
 		init: function () {
-
-			
-
+			// Toggle burder menu
+			$('.hamburger').on('click', function(e) {
+				$(this).toggleClass('is-active');
+				$('.mobile-menu').toggleClass('is-active');
+				$('body').toggleClass('unscrollable');
+				e.preventDefault();
+			});
 		},
 
 		//--------

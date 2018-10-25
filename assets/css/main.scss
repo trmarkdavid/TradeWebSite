@@ -1,8 +1,586 @@
-@import '_mixins';
 
-html {
+@import './partials/reset';
+@import './partials/base';
+@import './partials/components';
+@import './partials/classes';
+@import './partials/mixins';
 
+// Body
+body.unscrollable {
+    overflow: hidden;
 }
-body {
 
+// Header
+header {
+    height: 80px;
+    background: #4f5051;
+    border-bottom: 1px solid #6b6b6b;
+
+    .container {
+        @include breakpoint-max(md) {
+            max-width: unset;
+        }
+        .main-menus {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+
+            @include breakpoint(sm) {
+                justify-content: center;
+                font-size: 0.95rem;
+            }
+            @include breakpoint-only(xs) {
+                display: none;
+            }
+            
+            li {
+                display: inline-block;
+                margin: 0 1rem;
+    
+                a {
+                    transition: all 0.15s ease-in-out;
+                    font-family: 'Oswald', 'Arial', sans-serif;
+                    text-transform: uppercase;
+                    letter-spacing: 0.45px;
+    
+                    &.active {
+                        color: #ffba00;
+                    }
+                }
+            }
+        }
+        .make-booking {
+            letter-spacing: 0.45px;
+            transition: all 0.15s ease-in-out;
+
+            @include breakpoint-max(sm) {
+                display: none;
+            }
+        }
+        .mobile-content {
+            @include breakpoint-only(xs) {
+                display: flex !important;
+            }
+            .mc-menu {
+                position: relative;
+                z-index: 17;
+            }
+            .mc-logo {
+                width: 30%;
+            }
+        }
+    }
+}
+
+// Hero
+.hero {
+    background: #4f5051;
+
+    .container {
+        background: url('../images/hero-bg.png') no-repeat center right;
+        padding: 3rem 1rem;
+
+        @include breakpoint-only(lg) {
+            padding: 3rem;
+        }
+
+        h1, p {
+            color: #fff;
+        }
+
+        h1 {
+            display: flex;
+            align-items: center;
+            width: 300px;
+            font-size: 3rem;
+
+            @include breakpoint-only(sm) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        .hero-details {
+            text-align: right;
+            font-size: 1.05rem;
+
+            @include breakpoint-only(sm) {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hd-address,
+            .hd-contact {
+                font-weight: 500;
+            }
+            .hd-abn {
+                font-weight: 300;
+            }
+            .hd-address {
+                width: 200px;
+
+                @include breakpoint-only(sm) {
+                    width: 100%;
+                    text-align: center;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+// Credibility
+.credibility {
+    position: relative;
+    background: #484a4b;
+    padding: 1.25rem;
+
+    &.down-arrow::after {
+        background: #484a4b;
+    }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 1.5rem;
+ 
+            @include breakpoint-max(md) {
+                width: 50%;
+                margin: 0.3rem 0;
+            }
+            @include breakpoint-only(sm) {
+                margin: 0.35rem 0;
+            }
+
+            p {
+                color: #fff;
+            }
+        }
+    }
+}
+
+// Introduction
+.introduction {
+    padding: 5.5rem 0;
+
+    @include breakpoint-only(sm) {
+        padding: 5rem 0 3rem 0;
+    }
+
+    .intro-profile {
+        width: 30%;
+
+        @include breakpoint-only(sm) {
+            display: flex;
+            width: 100%;
+            margin-bottom: 1rem;
+
+            img {
+                margin: 0 auto;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+    .intro-details {
+        border-left: 5px solid #a1a1a1;
+        padding-left: 4rem;
+
+        @include breakpoint-max(lg) {
+            padding-left: 2rem;
+        }
+        @include breakpoint-only(md) {
+            margin-left: 2rem;
+        }
+        @include breakpoint-only(sm) {
+            border-left: none;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #484a4b;
+            font-family: 'Oswald', 'Arial', sans-serif;
+            font-size: 2.25rem;
+        }
+        p {
+            color: #484a4b;
+            margin-bottom: 0.75rem;
+            font-size: 0.97rem;
+        }
+    }
+}
+
+// Trade services
+.trade-services {
+    position: relative;
+    background: #4f5051;
+    padding: 4rem 0;
+    z-index: 1;
+
+    &.down-arrow::after {
+        background: #4f5051;
+    }
+    h2 {
+        color: #fff;
+    }
+    .ts-item {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ebebeb;
+        border-radius: 1rem;
+        padding: 0.35rem 1rem;
+        margin: 0.35rem 0.15rem;
+        max-width: 300px;
+
+        &.checked {
+            position: relative;
+            justify-content: flex-start;
+            padding-right: 2.2rem;
+
+            &::after {
+                content: "\f00c";
+                position: absolute;
+                font-family: "Font Awesome 5 Free"; 
+                font-weight: 900; 
+                font-size: 0.6rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                padding: 0.25rem;
+                background: #c1c3c7;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                right: 8px;
+            }
+        }
+
+        p {
+            font-family: 'Roboto', 'Arial', sans-serif;
+            font-size: 0.9rem;
+            margin: 0;
+            color: #545c67;
+        }
+    }
+}
+
+// Job Photos
+.job-photos {
+    background: #fbfbfb;
+    padding: 4rem 0;
+
+    h2 {
+        color: #4f5051;
+    }
+
+    .jp-container {
+
+        @include breakpoint-max(lg) {
+            align-items: flex-start;
+        }
+        img {
+            max-width: 25%;
+            width: 100%;
+
+            @include breakpoint-only(lg) {
+                height: 233px;
+            }
+            @include breakpoint-only(md) {
+                height: 173px;
+            }
+            @include breakpoint-only(sm) {
+                max-width: unset;
+                width: 50% !important;
+            }
+
+            &:hover {
+                opacity: 0.85;
+            }
+        }
+    }
+}
+
+// Reviews
+.reviews {
+    padding: 4rem 0;
+
+    h2 {
+        color: #4f5051;
+        margin-bottom: 5rem;
+    }
+    .reviews-container {
+        .rc-item {
+            width: 42%;
+            margin-bottom: 2rem;
+
+            @include breakpoint-only(sm) {
+                width: 100%;
+            }
+
+            .rc-top {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.5rem;
+
+                p {
+                    margin: 0;
+                    font-weight: 600;
+                    color: #4f5051;
+                }
+                img {
+                    width: 130px;
+                }
+            }
+            .rc-body {
+                .title {
+                    color: #02afce;
+                    margin-bottom: 0.25rem;
+                }
+                .description {
+                    color: #4f5051;
+                    font-size: 0.85rem;
+                }
+            }
+        }
+    }
+}
+
+// Fix4me
+.fix4me {
+    padding: 3.5rem 0;
+    background: #f0614f;
+
+    .f-left {
+        width: 70%;
+
+        @include breakpoint-max(md) {
+            width: 100%;
+
+            .f-logo {
+                align-items: center;
+                width: 25% !important;
+            }
+        }
+        @include breakpoint-only(sm) {
+            .f-logo {
+                width: 30% !important;
+            }
+        }
+
+        .f-logo {
+            width: 35%;
+            border-right: 1px solid #fff;
+
+            img {
+                max-width: 100%;
+            }
+        }
+        .f-details {
+            flex: 1;
+            padding: 0 5rem;
+
+            @include breakpoint-max(md) {
+                width: 50% !important;
+                padding: 0 2rem;
+            }
+            @include breakpoint-only(sm) {
+                padding: 0 1rem;
+            }
+
+            h5 {
+                color: #fff;
+            }
+            p {
+                color: #fff;
+                opacity: 0.93;
+                font-size: 0.92rem;
+                font-weight: 300;
+            }
+        }
+    }
+    .f-right {
+        flex: 1;
+
+        .view-my-profile {
+            font-size: 1.1rem;
+            background: #fff;
+            color: #f0614f;
+            padding: 0.65rem 1.75rem;
+            border-radius: 6px;
+        }
+    }
+}
+
+// Footer (Our Services Areas)
+footer.services-areas {
+    padding: 3rem 0;
+    background: #4f5051;
+    color: #fff;
+
+    p {
+        text-align: center;
+        font-size: 0.82rem;
+    }
+    .postcode {
+        font-size: 1.2rem;
+        color: #d4d4d4;
+    }
+    .address {
+        color: #d8d8d8;
+        font-weight: 300;
+    }
+    .expand {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+    }
+}
+
+// Super small devices
+@include breakpoint-only(xs) {
+    .trade-services .ts-container {
+        justify-content: center;
+    }
+    .job-photos .jp-container img {
+        width: 100% !important;
+    }
+    .reviews .rc-top .name {
+        width: 100%;
+    }
+    .fix4me .f-left {
+        .f-logo {
+            width: 100% !important;
+            border-right: 0;
+            margin-bottom: 2rem;
+        }
+        .f-details {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+    }
+    .credibility ul li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+// Burger menu icon and animations
+.hamburger {
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    text-transform: none;
+    overflow: visible;
+    padding: 0 !important;
+    outline: none !important;
+    transform: scale(1.05);
+}
+.hamburger-box {
+    width: 26px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+
+    .hamburger-inner {
+        display: flex;
+        top: 50%;
+        margin-top: -2px;
+
+        &, &::before, &::after {
+            width: 24px;
+            height: 3px;
+            background-color: #fff;
+            position: absolute;
+            transition-property: transform;
+            transition-duration: 0.15s;
+            transition-timing-function: ease;
+        }
+        &::before, &::after {
+            content: "";
+        }
+        &::before {
+            top: -10px;
+        }
+        &::after {
+            bottom: -10px;
+        }
+    }
+}
+.hamburger--collapse .hamburger-inner {
+    top: auto;
+    bottom: 0;
+    transition-duration: 0.13s;
+    transition-delay: 0.13s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--collapse .hamburger-inner::after {
+    top: -20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+}
+.hamburger--collapse .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--collapse.is-active .hamburger-inner {
+    transform: translate3d(0, -10px, 0) rotate(-45deg);
+    transition-delay: 0.22s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--collapse.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+}
+.hamburger--collapse.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+// Overlay mobile menu
+.overlay {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 16;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(33, 32, 32, 0.98);
+    overflow-x: hidden;
+    transition: 0.4s;
+
+    &.is-active {
+        height: 100%;
+    }
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+
+        a {
+            font-family: 'Oswald', 'Arial', sans-serif;
+            padding: 0.5rem;
+            text-decoration: none;
+            font-size: 1.75rem;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+
+            &:hover, &:focus {
+                color: #f1f1f1;
+            }
+        }
+    }
 }

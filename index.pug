@@ -2,11 +2,192 @@ extends ./layout/layout.pug
 
 block content
 
-  h2 It works!
+  // Hero
+  .hero.w-100
+    .container.d-flex.flex-wrap.justify-content-between
+      h1 Sunny Coast Handyman
+      .hero-details
+        p.hd-address 987 The Entrance Road Erina, NSW 2250
+        p.hd-contact.m-0 0413 666 888
+        p.hd-abn ABN: 37 123 870 260
+      a.make-booking.hotdog.ff-oswald.d-flex.d-md-none.justify-content-center.w-100(href='') Make a booking / Request a quote
+  // Credibility
+  .credibility.down-arrow
+    .container
+      ul.d-flex.flex-wrap.justify-content-center.align-items-center.m-0.p-0
+        li
+          img.mr-2(src="./assets/images/credibility/abn-checked.png", alt="ABN Checked")
+          p.m-0 ABN Checked
+        li
+          img.mr-2(src="./assets/images/credibility/licensed-insured.png", alt="Licensed and Insured")
+          p.m-0 Licensed and Insured
+        li
+          img.mr-2(src="./assets/images/credibility/fix4me-verified.png", alt="Fix4me Verified")
+          p.m-0 Fix4me Verified
+        li
+          img.mr-2(src="./assets/images/credibility/emergency-work.png", alt="Emergency Work")
+          p.m-0 Emergency Work
+  // Introduction
+  .introduction
+    .container
+      .narrow-content.d-flex.flex-wrap
+        .intro-profile
+          img(src="./assets/images/introduction/profile.png", alt="Ben from Sunny Coast Handyman Services")
+        .intro-details.flex-1
+          h2.ff-oswald.mb-4 Introduction
+          p Looking for a trustworthy, experienced and licensed Handyman on the Central Coast?
+          p Then look no further!
+          p Hi, I’m Ben from Sunny Coast Handyman Services, and I have been proudly servicing the Central Coast for just over 7 years. I am fully licensed and insured so you can feel confident when booking me for your next job.
+          p I am a family man who loves getting out for wave whenever I can, and spending time with my wife and 2 young kids.
+          p Call me a call to discuss your next job – I'd love to speak to you!
+  // Trade services
+  .trade-services.down-arrow
+    .container
+      .narrow-content
+        h2.mb-5.tt-c.text-center Trade services
+        .ts-container.d-flex.flex-wrap
+          .ts-item.checked
+            p Air Conditioning/Heating
+          .ts-item
+            p Appliance New/Repairs
+          .ts-item.checked
+            p Asbestos Inspection
+          .ts-item.checked
+            p Asbestos Management
+          .ts-item
+            p Architecture
+          .ts-item
+            p Balustrudes
+          .ts-item
+            p Ashphalt Concreting
+          .ts-item
+            p Balustrades
+          .ts-item
+            p Bath Resurfacing
+          .ts-item
+            p Bathroom Renovations
+          .ts-item
+            p Bin Cleaning
+          .ts-item.checked
+            p Carpet Repair
+          .ts-item
+            p Blinds, Curtains, Awnings
+          .ts-item
+            p Bricklaying
+          .ts-item
+            p Building
+          .ts-item
+            p Building Consultancy or Certification
+          .ts-item
+            p Cabinets
+          .ts-item.checked
+            p Cabling - Phone/Data/TV
+        .d-flex.mt-4
+          a.view-all-services.view-all-link.hotdog.tt-u(href="") View all services
+  // Job Photos
+  .job-photos
+    .container
+      h2.tt-c.ff-oswald.text-center.mb-5 Our job photos
+      .jp-container.flex-wrap.align-items-base.d-none.d-sm-flex
+          img(src="./assets/images/job-photos/jp-1.png", alt="Job Photo 1")
+          img(src="./assets/images/job-photos/jp-2.png", alt="Job Photo 2")
+          img(src="./assets/images/job-photos/jp-3.png", alt="Job Photo 3")
+          img(src="./assets/images/job-photos/jp-4.png", alt="Job Photo 4")
+          img(src="./assets/images/job-photos/jp-5.png", alt="Job Photo 5")
+          img(src="./assets/images/job-photos/jp-6.png", alt="Job Photo 6")
+          img(src="./assets/images/job-photos/jp-7.png", alt="Job Photo 7")
+          img(src="./assets/images/job-photos/jp-8.png", alt="Job Photo 8")
+      #jp-carousel.carousel.slide(data-ride='carousel').d-sm-none
+        ol.carousel-indicators
+          li.active(data-target='#jp-carousel', data-slide-to='0')
+          li(data-target='#jp-carousel', data-slide-to='1')
+          li(data-target='#jp-carousel', data-slide-to='2')
+          li(data-target='#jp-carousel', data-slide-to='3')
+          li(data-target='#jp-carousel', data-slide-to='4')
+          li(data-target='#jp-carousel', data-slide-to='5')
+          li(data-target='#jp-carousel', data-slide-to='6')
+          li(data-target='#jp-carousel', data-slide-to='7')
+          li(data-target='#jp-carousel', data-slide-to='8')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src="./assets/images/job-photos/jp-1.png", alt="Job Photo 1")
+          .carousel-item
+            img.d-block.w-100(src="./assets/images/job-photos/jp-2.png", alt="Job Photo 2")
+          .carousel-item
+            img.d-block.w-100(src="./assets/images/job-photos/jp-3.png", alt="Job Photo 3")
+          .carousel-item
+            img.d-block.w-100(src="./assets/images/job-photos/jp-4.png", alt="Job Photo 4")
+          .carousel-item
+            img.d-block.w-100(src="./assets/images/job-photos/jp-5.png", alt="Job Photo 5")
+          .carousel-item
+            img.d-block.w-100(src="./assets/images/job-photos/jp-6.png", alt="Job Photo 6")
+          .carousel-item
+            img.d-block.w-100(src="./assets/images/job-photos/jp-7.png", alt="Job Photo 7")
+          .carousel-item
+            img.d-block.w-100(src="./assets/images/job-photos/jp-8.png", alt="Job Photo 8")
+        a.carousel-control-prev(href='#jp-carousel', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#jp-carousel', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+      .d-flex.mt-4
+        a.view-all-gallery.view-all-link.hotdog.tt-u(href="") View all gallery
+  // Reviews
+  .reviews
+    .container
+      .narrow-content
+        h2.tt-c.ff-oswald.text-center Our recent reviews
+        .reviews-container.d-flex.flex-wrap.justify-content-between
+          .rc-item
+            .rc-top
+              p.name John Doe
+              img(src="./assets/images/reviews/5-star.png", alt="5 star review")
+            .rc-body
+              p.title Fixing windows and installing new door
+              p.description Psellus metus massa, auctor ut condimentum dictum, tincidunt nec arcu. Nam pharetra urna ac metus pellentesque porta. Praesent placerat tortor nec lacinia venenatis.“
+          //- rc-item
+          .rc-item
+            .rc-top
+              p.name Jane Smith
+              img(src="./assets/images/reviews/5-star.png", alt="5 star review")
+            .rc-body
+              p.title Install carpets in 2 rooms
+              p.description Sed varius dignissim augue at sodales. Sed non libero ut dolor feugiat fringilla at sed metus. Nunc mi ante, auctor et purus quis, pharetra blandit purus. Cras libero nisl, vestibulum id elementum non, laoreet ac orci. Morbi bibendum elit non ante sodales molestie. Curabitur egestas eros metus, sit amet vestibulum odio varius eget. Sed iaculis nibh ut mattis volutpat.
+          //- rc-item
+          .rc-item
+            .rc-top
+              p.name Samuel L 
+              img(src="./assets/images/reviews/4.5-star.png", alt="4.5 star review")
+            .rc-body
+              p.title Coodo, ornare ullamcorpern
+              p.description Gravida lorem nisi ac massa. Nunc dui odio, consequat ac odio at, facilisis pulvinar urna. Cras purus turpis, tincidunt vehicula libero commodo, ornare ullamcorper metus. Ut eget neque vestibulum, tincidunt nisl nec, posuere nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          //- rc-item
+          .rc-item
+            .rc-top
+              p.name Peter Peterson
+              img(src="./assets/images/reviews/5-star.png", alt="5 star review")
+            .rc-body
+              p.title Plios odo, ornare ullamaw eaol.
+              p.description Curabitur lobortis magna nulla, at tristique urna convallis ut. Vivamus iaculis metus non arcu viverra bibendum. Vestibulum efficitur, ex a vestibulum congue, eros nisi blandit dui,
+          //- rc-item
+        .d-flex
+          a.view-all-gallery.view-all-link.hotdog.tt-u(href="") View all reviews
+  // Fix4me
+  .fix4me
+    .container
+      .narrow-content.d-flex.flex-wrap
+        .f-left.d-flex.flex-wrap
+          .f-logo.d-flex.justify-content-center
+            img(src="/assets/images/fix4me/fix4me-logo.png", alt="Fix4me Logo")
+          .f-details.d-flex.flex-wrap.flex-column.align-items-start.justify-content-center
+            h5.title Fix4me Verified Trade Supplier
+            p.description.m-0 127 completed jobs 96% completion rate Average Rating 4.8 star
+        .f-right.d-flex.justify-content-center.align-items-center
+          a.view-my-profile(href="") View my profile
 
-block scripts
-  // External Script goes here...
-  script.
-    $(document).ready(function() {
 
-    });
+
+
+
+

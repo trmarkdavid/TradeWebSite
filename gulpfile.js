@@ -5,6 +5,7 @@ var sass          = require('gulp-sass');
 var browserSync   = require('browser-sync').create();
 var autoprefixer  = require('gulp-autoprefixer');
 var exec          = require('child_process').exec;
+var cssbeautify   = require('gulp-cssbeautify');
 
 var root  = './';
 var dir   = 'public'; // you may change this.
@@ -60,7 +61,8 @@ gulp.task('js', function() {
 // - ###########################################################################
 gulp.task('sass', function() {
     return gulp.src(paths.scss)
-      .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+      .pipe(sass().on('error', sass.logError))
+      .pipe(cssbeautify())
       .pipe(autoprefixer())
       .pipe(gulp.dest(root + dir + '/assets/css'))
       .pipe(browserSync.stream());

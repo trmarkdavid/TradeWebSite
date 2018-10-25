@@ -1,0 +1,13 @@
+a:link,
+a:hover,
+a:visited,
+a:active {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+button {
+    outline: none;
+    box-shadow: none;
+}

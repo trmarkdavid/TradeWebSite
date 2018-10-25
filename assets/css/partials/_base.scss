@@ -1,0 +1,58 @@
+@import './partials/mixins';
+
+// Typogrpahy
+h1, h2, h3, h4, h5, h6,
+p, span, a, label, strong,
+input, textarea {
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+// Links
+a {
+    color: #fff;
+
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+// Responsiveness
+@include breakpoint(xs) {
+    html {
+        font-size: 1rem !important;
+    }
+}
+@include breakpoint(sm) {
+    html {
+        font-size: 1.1rem;
+    }
+}
+
+@include breakpoint(md) {
+    html {
+        font-size: 1.025rem;
+    }
+}
+
+@include breakpoint(lg) {
+    html {
+        font-size: 0.95rem;
+    }
+}
+
+@include breakpoint(xl) {
+    html {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
